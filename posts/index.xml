@@ -9,20 +9,51 @@
         <atom:link href="/posts/index.xml" rel="self" type="application/rss+xml" />
         
         <item>
-            <title>Creating your own Website</title>
-            <link>/posts/creating-a-new-theme/</link>
+            <title>Creating your own Static Website</title>
+            <link>/posts/creating-a-new-website/</link>
             <pubDate>Fri, 08 Nov 2019 00:00:00 +0000</pubDate>
             
-            <guid>/posts/creating-a-new-theme/</guid>
-            <description>Introduction This tutorial will show you how to create a simple website with Hugo and Github Pages!
-Work in Progress</description>
+            <guid>/posts/creating-a-new-website/</guid>
+            <description>Introduction Creating and hosting a website is something that many of us wondered if not tried to do. While hosting a dynamic website is comparatively challenging, its quite easy to host a simple static website with something like Github Pages. So in this post I try to help people setup up what could potentially be your first website :D
+Note: Being a developer I just assume that people know the basics of computer programming and can get by with using a little bit of commandline.</description>
             <content type="html"><![CDATA[
 
 <h2 id="introduction">Introduction</h2>
 
-<p>This tutorial will show you how to create a simple website with Hugo and Github Pages!</p>
+<p>Creating and hosting a website is something that many of us wondered if not tried to do. While hosting a dynamic website is comparatively challenging, its quite easy to host a simple <a href="https://techterms.com/definition/staticwebsite">static website</a> with something like <a href="https://pages.github.com/">Github Pages</a>. So in this post I try to help people setup up what could potentially be your first website :D</p>
 
-<p><strong>Work in Progress</strong></p>
+<p><strong>Note:</strong> Being a developer I just assume that people know the basics of computer programming and can get by with using a little bit of commandline. While I do assume the above, I know that it is not obvious to everyone so don&rsquo;t get discouraged if you do not get things!</p>
+
+<h3 id="setting-up-github-pages">Setting Up Github Pages</h3>
+
+<p>First of all you need a <a href="https://github.com/">Github Account</a> which I am assuming you have. From here on wherever you find <code>{YOUR_USERNAME}</code> replace that with your actual github username.</p>
+
+<p>Github Pages allows you to host <strong>free</strong> static websites for users, your organization and your projects. Ever wondered why many open-source libraries and tools generally have a <code>*.github.io</code> website? This is the reason!</p>
+
+<p>So let&rsquo;s get started!</p>
+
+<p>Head over to <a href="https://github.com/">GitHub</a> and create a new repository named <code>{YOUR_USERNAME}.github.io</code>. Ensure that the username matches exactly or else it won&rsquo;t work!</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">git clone https://github.com/<span style="color:#f92672">{</span>YOUR_USERNAME<span style="color:#f92672">}</span>/<span style="color:#f92672">{</span>YOUR_USERNAME<span style="color:#f92672">}</span>.github.io
+
+cd <span style="color:#f92672">{</span>YOUR_USERNAME<span style="color:#f92672">}</span>.github.io
+
+<span style="color:#75715e"># Lets create an intial homepage</span>
+echo <span style="color:#e6db74">&#34;Hello World!&#34;</span> &gt; index.html
+
+<span style="color:#75715e"># Push this website to Github!</span>
+git add -A
+git commit -m <span style="color:#e6db74">&#34;Initial commit&#34;</span>
+git push -u origin master</code></pre></div>
+<p>Now fire up a browser and go to https://{YOUR_USERNAME}.github.io. You should be greeted to <code>Hello World!</code>. That&rsquo;s it! You have hosted your first website!</p>
+
+<p>While it might not be much but you can do a lot of things with static websites like the one we created. If you know a bit of <code>HTML</code> and <code>Javascript</code> you can create some amazing static websites. If you are looking for inspiration, people come up with some amazing creations at <a href="https://codepen.io/popular/pens/">Codepen.io</a>.
+Not only that hosting your own Blogs or Documentation for your Projects is also not out of the question using static webpages. For example this website that your visiting right now is a static website hosted via Github Pages!</p>
+
+<p>So go ahead! Try modifying the <code>index.html</code> with some actual <code>HTML</code> and <code>Javascript</code> to host your first Blog or your Resume maybe.</p>
+
+<p>But before you start that it maybe better that you also consider working with a Static website generator. You can host you blog website by modifying the <code>index.html</code> file with links to other <code>.html</code> files and <code>.js</code> and <code>.css</code> files giving it multiple pages and structure. But as the size of your website will increase it will get harder to maintain! So thats where a static website generator like <a href="https://jekyllrb.com/">Jekyll</a> or <a href="https://gohugo.io/">Hugo</a> comes into the picture! Also <a href="https://jekyllrb.com/">Jekyll</a> is integrated into Github Pages itself so it might be worth taking a look into. I might discuss more about this in a later Post.</p>
+
+<p>This is my first post so I decided to keep it simple. I hope that this post was helpful! Thanks for reading! Hoping to see your websites soon!</p>
 ]]></content>
         </item>
         
