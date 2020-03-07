@@ -14,28 +14,30 @@
             <pubDate>Sat, 07 Mar 2020 00:00:00 +0000</pubDate>
             
             <guid>/posts/lsystem/random_lsystem/</guid>
-            <description>Introduction Today I came a new term: L-System and I found it quite fascinating. The idea that simple rules can lead to formation of complex structures which might be used to model tree and organism growth and also generate fractals.
-From what I understood the Grammar or rules that define the L-System are very simple. It it kindof like formal grammar that people study in Theory Of Computation or similar courses taught in Computer Science.</description>
+            <description>Introduction Today I came across a new term: L-System and I found it quite fascinating. The idea that simple rules can lead to the formation of complex structures that might be used to model tree and organism growth and also generate fractals is intriguing to me.
+ This image was created with help of L-System and it&amp;rsquo;s visualization. It can be used to modelfar more complicated tree structures.
+From what I understood the Grammar or rules that define the L-System are very simple.</description>
             <content type="html"><![CDATA[<h2 id="introduction">Introduction</h2>
-<p>Today I came a new term: <a href="https://en.wikipedia.org/wiki/L-system">L-System</a> and I found it quite fascinating. The idea that simple rules can lead to formation of complex structures which might be used to model tree and organism growth and also generate <a href="https://en.wikipedia.org/wiki/Fractal#Introduction">fractals</a>.</p>
-
+<p>Today I came across a new term: <a href="https://en.wikipedia.org/wiki/L-system">L-System</a> and I found it quite fascinating. The idea that simple rules can lead to the formation of complex structures that might be used to model tree and organism growth and also generate <a href="https://en.wikipedia.org/wiki/Fractal#Introduction">fractals</a> is intriguing to me.</p>
+<p>
     <img src="/img/lsystem_tree.png"  alt="L-System (FF[&#43;&#43;F[-F]&#43;F][F[&#43;F]-F][--F[&#43;F]-F])"  class="center"  style="border-radius: 8px; width: 300px"  />
 
 
-<p>From what I understood the Grammar or rules that define the L-System are very simple. It it kindof like formal grammar that people study in Theory Of Computation or similar courses taught in Computer Science. But instead of applying one rule/production at a time, we apply as many rules as possible in parallel. Hence they are called a <code>Parallel Rewriting System</code>. But the rules alone are not interesting, it&rsquo;s when we apply some kind of transformation to convert the generated strings into geometric structures, things start getting interesting!</p>
-<p>(<strong>Note</strong>: If you don&rsquo;t understand what I just said, don&rsquo;t worry even I did not understand them before I was forced to go through the courses as part of my curriculum :P)</p>
+This image was created with help of L-System and it&rsquo;s visualization. It can be used to modelfar more complicated tree structures.</p>
+<p>From what I understood the Grammar or rules that define the L-System are very simple. It is kindof like <a href="https://en.wikipedia.org/wiki/Formal_grammar">formal grammar</a> that people study in <a href="https://en.wikipedia.org/wiki/Theory_of_computation">Theory Of Computation</a> or similar courses taught in Computer Science. But instead of applying one rule/production at a time, we apply as many rules as possible in parallel. Hence L-Systems are also called <code>Parallel Rewriting Systems</code>. But the rules and generated strings by itself are not that interesting, it&rsquo;s when we apply some kind of transformation to convert these generated strings into geometric structures, things start getting interesting!</p>
+<p>(<strong>Note</strong>: If you don&rsquo;t understand what I just said, don&rsquo;t worry even I did not understand them before I was forced to go through the courses as part of my curriculum :P, But rest assured it&rsquo;s easy to understand)</p>
 <h2 id="some-terms">Some Terms</h2>
 <p>Lets now start by defining some terms.</p>
-<p><code>Alphabets</code>: The set of characters we will use in our string. Some of them can be replaced by others via the rules and hece called <code>variables</code> and some of them cannot be hence called <code>constant</code> (or <code>terminal</code>)</p>
+<p><code>Alphabets</code>: The set of characters we will use in our string. Some of them can be replaced by others via the rules and hece called <code>variables</code> and some of them cannot be hence called <code>constant</code> (or <code>terminal</code>). Examples we can use any character in the English alphabet like &ldquo;A&rdquo; or &ldquo;B&rdquo; or even some other fancy characters like &ldquo;[&rdquo; or &ldquo;α&rdquo;.</p>
 <p><code>Axiom</code>: Fancy way of saying a starting string!</p>
-<p><code>Rules</code>: The way we will replace variables with a number of variables and constants.</p>
+<p><code>Rules</code>: The fixed way in which we will replace variables with other variables and constants. Example: Take every instance of &ldquo;A&rdquo; and replace it with &ldquo;AB&rdquo; (A→AB)</p>
 <p>So let&rsquo;s start with an example:</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#66d9ef">Alphabets</span>:
   <span style="color:#66d9ef">Variables</span>: A, B
   <span style="color:#66d9ef">Constants</span>: none
 <span style="color:#66d9ef">Axiom</span>: A
 <span style="color:#66d9ef">Rules</span>: (A→AB), (B→A)
-</code></pre></div><p>This is how algae growth was modelled using L-System. Lets simulate how the rules would work:</p>
+</code></pre></div><p>This is how algae growth is modeled using L-System. Let&rsquo;s simulate how the rules would work:</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#66d9ef">n=0</span>: A
 <span style="color:#66d9ef">n=1</span>: AB
 <span style="color:#66d9ef">n=2</span>: ABA
@@ -64,8 +66,8 @@ You and your master have decided on the following instruction set:</p>
 <p><code>+</code>: Rotate Right by a fixed angle</p>
 <p><code>[</code>: Save the current orientation</p>
 <p><code>]</code>: Return to the last saved orientation</p>
-<p>Apart from this any other instructions are ignored.</p>
-<p>You can come up with more complex instructions but for now these alone should suffice to make some really, really complex structures. Don&rsquo;t Believe me?
+<p>Apart from these, any other instructions are ignored.</p>
+<p>You can come up with more complex instructions but for now, these alone should suffice to make some complex structures. Don&rsquo;t Believe me?
 Have a look at this visualization created by using these rules <a href="https://nylki.github.io/lindenmayer/examples/interactive_lsystem_builder/index.html">here</a>!</p>
 <p>The above link does create some cool looking but it&rsquo;s not that fun to create visualizations by hand is it? So what if there was an automated ready to see visualization without any need to code/understand?</p>
 <p>This is the <a href="https://ehrenjn.github.io/LSystems/lsystems.html">link</a> you are looking for!</p>
