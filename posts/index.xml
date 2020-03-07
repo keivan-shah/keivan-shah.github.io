@@ -5,8 +5,79 @@
         <description>Recent content in Posts on Keivan Shah</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>en-us</language>
-        <lastBuildDate>Fri, 08 Nov 2019 00:00:00 +0000</lastBuildDate>
+        <lastBuildDate>Sat, 07 Mar 2020 00:00:00 +0000</lastBuildDate>
         <atom:link href="/posts/index.xml" rel="self" type="application/rss+xml" />
+        
+        <item>
+            <title>L-System</title>
+            <link>/posts/lsystem/random_lsystem/</link>
+            <pubDate>Sat, 07 Mar 2020 00:00:00 +0000</pubDate>
+            
+            <guid>/posts/lsystem/random_lsystem/</guid>
+            <description>Introduction Today I came a new term: L-System and I found it quite fascinating. The idea that simple rules can lead to formation of complex structures which might be used to model tree and organism growth and also generate fractals.
+From what I understood the Grammar or rules that define the L-System are very simple. It it kindof like formal grammar that people study in Theory Of Computation or similar courses taught in Computer Science.</description>
+            <content type="html"><![CDATA[<h2 id="introduction">Introduction</h2>
+<p>Today I came a new term: <a href="https://en.wikipedia.org/wiki/L-system">L-System</a> and I found it quite fascinating. The idea that simple rules can lead to formation of complex structures which might be used to model tree and organism growth and also generate <a href="https://en.wikipedia.org/wiki/Fractal#Introduction">fractals</a>.</p>
+
+    <img src="/img/lsystem_tree.png"  alt="L-System (FF[&#43;&#43;F[-F]&#43;F][F[&#43;F]-F][--F[&#43;F]-F])"  class="center"  style="border-radius: 8px; width: 300px"  />
+
+
+<p>From what I understood the Grammar or rules that define the L-System are very simple. It it kindof like formal grammar that people study in Theory Of Computation or similar courses taught in Computer Science. But instead of applying one rule/production at a time, we apply as many rules as possible in parallel. Hence they are called a <code>Parallel Rewriting System</code>. But the rules alone are not interesting, it&rsquo;s when we apply some kind of transformation to convert the generated strings into geometric structures, things start getting interesting!</p>
+<p>(<strong>Note</strong>: If you don&rsquo;t understand what I just said, don&rsquo;t worry even I did not understand them before I was forced to go through the courses as part of my curriculum :P)</p>
+<h2 id="some-terms">Some Terms</h2>
+<p>Lets now start by defining some terms.</p>
+<p><code>Alphabets</code>: The set of characters we will use in our string. Some of them can be replaced by others via the rules and hece called <code>variables</code> and some of them cannot be hence called <code>constant</code> (or <code>terminal</code>)</p>
+<p><code>Axiom</code>: Fancy way of saying a starting string!</p>
+<p><code>Rules</code>: The way we will replace variables with a number of variables and constants.</p>
+<p>So let&rsquo;s start with an example:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#66d9ef">Alphabets</span>:
+  <span style="color:#66d9ef">Variables</span>: A, B
+  <span style="color:#66d9ef">Constants</span>: none
+<span style="color:#66d9ef">Axiom</span>: A
+<span style="color:#66d9ef">Rules</span>: (A→AB), (B→A)
+</code></pre></div><p>This is how algae growth was modelled using L-System. Lets simulate how the rules would work:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#66d9ef">n=0</span>: A
+<span style="color:#66d9ef">n=1</span>: AB
+<span style="color:#66d9ef">n=2</span>: ABA
+<span style="color:#66d9ef">n=3</span>: ABAAB
+<span style="color:#66d9ef">n=4</span>: ABAABABA
+<span style="color:#66d9ef">n=5</span>: ABAABABAABAAB
+...
+</code></pre></div><p>As you can see the number of terms starts increasing faster as we get to higher number of generations. If you look closely the number of alphabets at each step(population) follows the <a href="https://en.wikipedia.org/wiki/Fibonacci_number">Fibonacci Series</a> [1,2,3,5,8,12,&hellip;].</p>
+<p>While the above example is interesting, the visualization is not quite that amazing to look at. It does look like a tree as shown here:</p>
+<pre><code>n=0:               A
+                  / \
+n=1:             A   B
+                /|    \
+n=2:           A B     A
+             / | |     | \
+n=3:         A B A     A B
+           / | | | \   | \ \
+n=4:       A B A A B   A B  A
+</code></pre><p>But as we start getting into more complex rules, we start getting into more interesting visualizations. For more examples you can have a look <a href="https://en.wikipedia.org/wiki/L-system#Examples_of_L-systems">here</a>.</p>
+<h2 id="visualizations">Visualizations</h2>
+<p>Now from the above strings itself its difficult to visualize the models. So we generally use what&rsquo;s called <a href="https://en.wikipedia.org/wiki/Turtle_graphics">Turtle Graphics</a> to visualize these models. Some of you might have had prior experience with <a href="https://en.wikipedia.org/wiki/Logo_(programming_language)">Logo</a>, this is quite similar and we use the generated strings as input for our graphic generation.</p>
+<p>So, assume you are a robot who is been feed instructions by your master.
+You and your master have decided on the following instruction set:</p>
+<p><code>F</code>: Go forward by a fixed amount</p>
+<p><code>-</code>: Rotate Left by a fixed angle</p>
+<p><code>+</code>: Rotate Right by a fixed angle</p>
+<p><code>[</code>: Save the current orientation</p>
+<p><code>]</code>: Return to the last saved orientation</p>
+<p>Apart from this any other instructions are ignored.</p>
+<p>You can come up with more complex instructions but for now these alone should suffice to make some really, really complex structures. Don&rsquo;t Believe me?
+Have a look at this visualization created by using these rules <a href="https://nylki.github.io/lindenmayer/examples/interactive_lsystem_builder/index.html">here</a>!</p>
+<p>The above link does create some cool looking but it&rsquo;s not that fun to create visualizations by hand is it? So what if there was an automated ready to see visualization without any need to code/understand?</p>
+<p>This is the <a href="https://ehrenjn.github.io/LSystems/lsystems.html">link</a> you are looking for!</p>
+<h2 id="links">Links</h2>
+<p>Here are some more links that are used to create the above visualizations.</p>
+<ul>
+<li><a href="https://github.com/TanviKumar/treegen">Create Tree Images</a></li>
+<li><a href="https://github.com/nylki/lindenmayer">Complete Code for LSytem Implemenatation</a></li>
+<li><a href="https://github.com/ehrenjn/LSystems">Awesome Visualization</a></li>
+</ul>
+]]></content>
+        </item>
         
         <item>
             <title>Creating your own Static Website</title>
@@ -16,22 +87,13 @@
             <guid>/posts/creating-a-new-website/</guid>
             <description>Introduction Creating and hosting a website is something that many of us wondered if not tried to do. While hosting a dynamic website is comparatively challenging, its quite easy to host a simple static website with something like Github Pages. So in this post I try to help people setup up what could potentially be your first website :D
 Note: Being a developer I just assume that people know the basics of computer programming and can get by with using a little bit of commandline.</description>
-            <content type="html"><![CDATA[
-
-<h2 id="introduction">Introduction</h2>
-
+            <content type="html"><![CDATA[<h2 id="introduction">Introduction</h2>
 <p>Creating and hosting a website is something that many of us wondered if not tried to do. While hosting a dynamic website is comparatively challenging, its quite easy to host a simple <a href="https://techterms.com/definition/staticwebsite">static website</a> with something like <a href="https://pages.github.com/">Github Pages</a>. So in this post I try to help people setup up what could potentially be your first website :D</p>
-
 <p><strong>Note:</strong> Being a developer I just assume that people know the basics of computer programming and can get by with using a little bit of commandline. While I do assume the above, I know that it is not obvious to everyone so don&rsquo;t get discouraged if you do not get things!</p>
-
 <h3 id="setting-up-github-pages">Setting Up Github Pages</h3>
-
 <p>First of all you need a <a href="https://github.com/">Github Account</a> which I am assuming you have. From here on wherever you find <code>{YOUR_USERNAME}</code> replace that with your actual github username.</p>
-
 <p>Github Pages allows you to host <strong>free</strong> static websites for users, your organization and your projects. Ever wondered why many open-source libraries and tools generally have a <code>*.github.io</code> website? This is the reason!</p>
-
 <p>So let&rsquo;s get started!</p>
-
 <p>Head over to <a href="https://github.com/">GitHub</a> and create a new repository named <code>{YOUR_USERNAME}.github.io</code>. Ensure that the username matches exactly or else it won&rsquo;t work!</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">git clone https://github.com/<span style="color:#f92672">{</span>YOUR_USERNAME<span style="color:#f92672">}</span>/<span style="color:#f92672">{</span>YOUR_USERNAME<span style="color:#f92672">}</span>.github.io
 
@@ -43,16 +105,12 @@ echo <span style="color:#e6db74">&#34;Hello World!&#34;</span> &gt; index.html
 <span style="color:#75715e"># Push this website to Github!</span>
 git add -A
 git commit -m <span style="color:#e6db74">&#34;Initial commit&#34;</span>
-git push -u origin master</code></pre></div>
-<p>Now fire up a browser and go to https://{YOUR_USERNAME}.github.io. You should be greeted to <code>Hello World!</code>. That&rsquo;s it! You have hosted your first website!</p>
-
+git push -u origin master
+</code></pre></div><p>Now fire up a browser and go to https://{YOUR_USERNAME}.github.io. You should be greeted to <code>Hello World!</code>. That&rsquo;s it! You have hosted your first website!</p>
 <p>While it might not be much but you can do a lot of things with static websites like the one we created. If you know a bit of <code>HTML</code> and <code>Javascript</code> you can create some amazing static websites. If you are looking for inspiration, people come up with some amazing creations at <a href="https://codepen.io/popular/pens/">Codepen.io</a>.
 Not only that hosting your own Blogs or Documentation for your Projects is also not out of the question using static webpages. For example this website that your visiting right now is a static website hosted via Github Pages!</p>
-
 <p>So go ahead! Try modifying the <code>index.html</code> with some actual <code>HTML</code> and <code>Javascript</code> to host your first Blog or your Resume maybe.</p>
-
 <p>But before you start that it maybe better that you also consider working with a Static website generator. You can host you blog website by modifying the <code>index.html</code> file with links to other <code>.html</code> files and <code>.js</code> and <code>.css</code> files giving it multiple pages and structure. But as the size of your website will increase it will get harder to maintain! So thats where a static website generator like <a href="https://jekyllrb.com/">Jekyll</a> or <a href="https://gohugo.io/">Hugo</a> comes into the picture! Also <a href="https://jekyllrb.com/">Jekyll</a> is integrated into Github Pages itself so it might be worth taking a look into. I might discuss more about this in a later Post.</p>
-
 <p>This is my first post so I decided to keep it simple. I hope that this post was helpful! Thanks for reading! Hoping to see your websites soon!</p>
 ]]></content>
         </item>

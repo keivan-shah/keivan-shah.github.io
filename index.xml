@@ -12,6 +12,16 @@
     
     
     <item>
+      <title>L-System</title>
+      <link>/posts/lsystem/random_lsystem/</link>
+      <pubDate>Sat, 07 Mar 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/posts/lsystem/random_lsystem/</guid>
+      <description>Introduction Today I came a new term: L-System and I found it quite fascinating. The idea that simple rules can lead to formation of complex structures which might be used to model tree and organism growth and also generate fractals.
+From what I understood the Grammar or rules that define the L-System are very simple. It it kindof like formal grammar that people study in Theory Of Computation or similar courses taught in Computer Science.</description>
+    </item>
+    
+    <item>
       <title>Creating your own Static Website</title>
       <link>/posts/creating-a-new-website/</link>
       <pubDate>Fri, 08 Nov 2019 00:00:00 +0000</pubDate>
