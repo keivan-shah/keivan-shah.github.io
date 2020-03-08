@@ -15,37 +15,35 @@
             
             <guid>/posts/lsystem/random_lsystem/</guid>
             <description>Introduction Today I came across a new term: L-System and I found it quite fascinating. The idea that simple rules can lead to the formation of complex structures that might be used to model tree and organism growth and also generate fractals is intriguing to me.
- This image was created with help of L-System and it&amp;rsquo;s visualization. It can be used to modelfar more complicated tree structures.
-From what I understood the Grammar or rules that define the L-System are very simple.</description>
+ This image was created with help of L-System and it&amp;rsquo;s visualization. It can also be used to model far more complicated tree structures. If you are interested you can checkout how I made this image here and the code for the same can be found here.</description>
             <content type="html"><![CDATA[<h2 id="introduction">Introduction</h2>
 <p>Today I came across a new term: <a href="https://en.wikipedia.org/wiki/L-system">L-System</a> and I found it quite fascinating. The idea that simple rules can lead to the formation of complex structures that might be used to model tree and organism growth and also generate <a href="https://en.wikipedia.org/wiki/Fractal#Introduction">fractals</a> is intriguing to me.</p>
 <p>
     <img src="/img/lsystem_tree.png"  alt="L-System (FF[&#43;&#43;F[-F]&#43;F][F[&#43;F]-F][--F[&#43;F]-F])"  class="center"  style="border-radius: 8px; width: 300px"  />
 
 
-This image was created with help of L-System and it&rsquo;s visualization. It can be used to modelfar more complicated tree structures.</p>
-<p>From what I understood the Grammar or rules that define the L-System are very simple. It is kindof like <a href="https://en.wikipedia.org/wiki/Formal_grammar">formal grammar</a> that people study in <a href="https://en.wikipedia.org/wiki/Theory_of_computation">Theory Of Computation</a> or similar courses taught in Computer Science. But instead of applying one rule/production at a time, we apply as many rules as possible in parallel. Hence L-Systems are also called <code>Parallel Rewriting Systems</code>. But the rules and generated strings by itself are not that interesting, it&rsquo;s when we apply some kind of transformation to convert these generated strings into geometric structures, things start getting interesting!</p>
-<p>(<strong>Note</strong>: If you don&rsquo;t understand what I just said, don&rsquo;t worry even I did not understand them before I was forced to go through the courses as part of my curriculum :P, But rest assured it&rsquo;s easy to understand)</p>
+This image was created with help of L-System and it&rsquo;s visualization. It can also be used to model far more complicated tree structures. If you are interested you can checkout how I made this image <a href="https://keivan.tech/L-System/">here</a> and the code for the same can be found <a href="https://github.com/keivan-shah/L-System">here</a>.</p>
+<p>From what I understood the Grammar or rules that define the L-System are very simple. It is kind of like <a href="https://en.wikipedia.org/wiki/Formal_grammar">formal grammar</a> that people study in <a href="https://en.wikipedia.org/wiki/Theory_of_computation">Theory Of Computation</a> or similar courses taught in Computer Science(Actual not only kind of, L-Systems are a strict subset of formal grammar). But instead of applying one rule/production at a time, we apply as many rules as possible in parallel. Hence L-Systems are also called <code>Parallel Rewriting Systems</code>. But the rules and generated strings by itself are not that interesting, it&rsquo;s when we apply some kind of transformation to convert these generated strings into geometric structures, things start getting interesting!</p>
+<p>(<strong>Note</strong>: If you don&rsquo;t understand what I just said, don&rsquo;t worry even I did not understand them before I was forced to go through the courses as part of my curriculum :P, But rest assured it&rsquo;s easy to understand!)</p>
 <h2 id="some-terms">Some Terms</h2>
 <p>Lets now start by defining some terms.</p>
 <p><code>Alphabets</code>: The set of characters we will use in our string. Some of them can be replaced by others via the rules and hece called <code>variables</code> and some of them cannot be hence called <code>constant</code> (or <code>terminal</code>). Examples we can use any character in the English alphabet like &ldquo;A&rdquo; or &ldquo;B&rdquo; or even some other fancy characters like &ldquo;[&rdquo; or &ldquo;α&rdquo;.</p>
-<p><code>Axiom</code>: Fancy way of saying a starting string!</p>
-<p><code>Rules</code>: The fixed way in which we will replace variables with other variables and constants. Example: Take every instance of &ldquo;A&rdquo; and replace it with &ldquo;AB&rdquo; (A→AB)</p>
-<p>So let&rsquo;s start with an example:</p>
+<p><code>Axiom</code>: Fancy way of saying a starting string! It&rsquo;s just a string made of the characters defined in our alphabet. Example: &ldquo;A&rdquo;</p>
+<p><code>Rules</code>: The fixed way in which we will replace variables with other variables and constants. Example: Take every instance of &ldquo;A&rdquo; and replace it with &ldquo;AB&rdquo;[ Written as: (A→AB)]</p>
+<p>So let&rsquo;s start with the example:</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#66d9ef">Alphabets</span>:
   <span style="color:#66d9ef">Variables</span>: A, B
   <span style="color:#66d9ef">Constants</span>: none
 <span style="color:#66d9ef">Axiom</span>: A
 <span style="color:#66d9ef">Rules</span>: (A→AB), (B→A)
 </code></pre></div><p>This is how algae growth is modeled using L-System. Let&rsquo;s simulate how the rules would work:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#66d9ef">n=0</span>: A
-<span style="color:#66d9ef">n=1</span>: AB
-<span style="color:#66d9ef">n=2</span>: ABA
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#66d9ef">n=0</span>: A <span style="color:#75715e"># Only one rule was applicable here (A→AB)</span>
+<span style="color:#66d9ef">n=1</span>: AB <span style="color:#75715e"># Here we can apply both rules</span>
+<span style="color:#66d9ef">n=2</span>: ABA <span style="color:#75715e"># Similarly apply the relevant rule for each character</span>
 <span style="color:#66d9ef">n=3</span>: ABAAB
 <span style="color:#66d9ef">n=4</span>: ABAABABA
 <span style="color:#66d9ef">n=5</span>: ABAABABAABAAB
-...
-</code></pre></div><p>As you can see the number of terms starts increasing faster as we get to higher number of generations. If you look closely the number of alphabets at each step(population) follows the <a href="https://en.wikipedia.org/wiki/Fibonacci_number">Fibonacci Series</a> [1,2,3,5,8,12,&hellip;].</p>
+</code></pre></div><p>As you can see the number of terms starts increasing faster as we get to a higher number of generations. If you look closely the number of alphabets at each step(population) follows the <a href="https://en.wikipedia.org/wiki/Fibonacci_number">Fibonacci Series</a> [1,2,3,5,8,12,&hellip;].</p>
 <p>While the above example is interesting, the visualization is not quite that amazing to look at. It does look like a tree as shown here:</p>
 <pre><code>n=0:               A
                   / \
@@ -56,26 +54,29 @@ n=2:           A B     A
 n=3:         A B A     A B
            / | | | \   | \ \
 n=4:       A B A A B   A B  A
-</code></pre><p>But as we start getting into more complex rules, we start getting into more interesting visualizations. For more examples you can have a look <a href="https://en.wikipedia.org/wiki/L-system#Examples_of_L-systems">here</a>.</p>
+</code></pre><p>While this is a recursion tree that programmers might be familiar with, it is nowhere close to real trees that we see which are claimed to be closely simulated by L-Systems. This is because the rules till now have been quite simple.</p>
+<p>As we start getting into more complex rules, we start getting into more interesting visualizations. For more examples, you can have a look <a href="https://en.wikipedia.org/wiki/L-system#Examples_of_L-systems">here</a> to get an idea about how wide varieties of structures can be modeled by L-Systems.</p>
 <h2 id="visualizations">Visualizations</h2>
-<p>Now from the above strings itself its difficult to visualize the models. So we generally use what&rsquo;s called <a href="https://en.wikipedia.org/wiki/Turtle_graphics">Turtle Graphics</a> to visualize these models. Some of you might have had prior experience with <a href="https://en.wikipedia.org/wiki/Logo_(programming_language)">Logo</a>, this is quite similar and we use the generated strings as input for our graphic generation.</p>
-<p>So, assume you are a robot who is been feed instructions by your master.
+<p>Now from the above strings itself, it&rsquo;s difficult to visualize the models. So we generally use what&rsquo;s called <a href="https://en.wikipedia.org/wiki/Turtle_graphics">Turtle Graphics</a> to visualize these models. Some of you might have had prior experience with <a href="https://en.wikipedia.org/wiki/Logo_(programming_language)">Logo</a>, this is quite similar and we use the generated strings as input and map it to instructions for our graphics generation.</p>
+<p>So, assume you are a robot who is been feed instructions by your master. Your master will read you the instructions from the generated string one by one.
 You and your master have decided on the following instruction set:</p>
 <p><code>F</code>: Go forward by a fixed amount</p>
 <p><code>-</code>: Rotate Left by a fixed angle</p>
 <p><code>+</code>: Rotate Right by a fixed angle</p>
 <p><code>[</code>: Save the current orientation</p>
 <p><code>]</code>: Return to the last saved orientation</p>
-<p>Apart from these, any other instructions are ignored.</p>
-<p>You can come up with more complex instructions but for now, these alone should suffice to make some complex structures. Don&rsquo;t Believe me?
-Have a look at this visualization created by using these rules <a href="https://nylki.github.io/lindenmayer/examples/interactive_lsystem_builder/index.html">here</a>!</p>
-<p>The above link does create some cool looking but it&rsquo;s not that fun to create visualizations by hand is it? So what if there was an automated ready to see visualization without any need to code/understand?</p>
-<p>This is the <a href="https://ehrenjn.github.io/LSystems/lsystems.html">link</a> you are looking for!</p>
+<p>Apart from these, any other instructions are ignored.
+You can come up with more complex instructions but for now, these alone should suffice.</p>
+<p>With just these instructions you can make some complex structures. Don&rsquo;t Believe me?
+Try creating some visualizations by writing your own rules <a href="https://keivan.tech/L-System/">here</a>. You can also explore the code behind this <a href="https://github.com/keivan-shah/L-System">here</a>.</p>
+<p>The above link does create some cool looking but it&rsquo;s not that fun to create visualizations by hand is it? So what if there was an automated visualization with randomly generated rulesets?</p>
+<p>This is the <a href="https://ehrenjn.github.io/LSystems/lsystems.html">link</a> you are looking for! It looks really cool and makes you remember the old-school Desktop Wallpapers that people used to have.</p>
+<p>For now, this is where I leave you. I will try to update this post as and when I explore more into the world of <code>L-Systems</code></p>
 <h2 id="links">Links</h2>
-<p>Here are some more links that are used to create the above visualizations.</p>
+<p>Here are some more links that I referred to while writing this post.</p>
 <ul>
 <li><a href="https://github.com/TanviKumar/treegen">Create Tree Images</a></li>
-<li><a href="https://github.com/nylki/lindenmayer">Complete Code for LSytem Implemenatation</a></li>
+<li><a href="https://github.com/nylki/lindenmayer">Complete Code for an L-Sytem Implemenatation</a></li>
 <li><a href="https://github.com/ehrenjn/LSystems">Awesome Visualization</a></li>
 </ul>
 ]]></content>
