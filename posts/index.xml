@@ -23,10 +23,10 @@
 
 
 This image was created with help of L-System and it&rsquo;s visualization. It can also be used to model far more complicated tree structures. If you are interested you can checkout how I made this image <a href="https://keivan.tech/L-System/">here</a> and the code for the same can be found <a href="https://github.com/keivan-shah/L-System">here</a>.</p>
-<p>From what I understood the Grammar or rules that define the L-System are very simple. It is kind of like <a href="https://en.wikipedia.org/wiki/Formal_grammar">formal grammar</a> that people study in <a href="https://en.wikipedia.org/wiki/Theory_of_computation">Theory Of Computation</a> or similar courses taught in Computer Science(Actual not only kind of, L-Systems are a strict subset of formal grammar). But instead of applying one rule/production at a time, we apply as many rules as possible in parallel. Hence L-Systems are also called <code>Parallel Rewriting Systems</code>. But the rules and generated strings by itself are not that interesting, it&rsquo;s when we apply some kind of transformation to convert these generated strings into geometric structures, things start getting interesting! For now, I don&rsquo;t want to dive into the depths for formal grammar and it&rsquo;s relation with L-Systems, maybe in the future? ¯\<em>(ツ)</em>/¯</p>
-<p>(<strong>Note</strong>: If you don&rsquo;t understand what I just said, don&rsquo;t worry even I did not understand them before I was forced to go through the courses as part of my curriculum :P, But rest assured it&rsquo;s easy to understand!)</p>
+<p>From what I understood the Grammar or rules that define the L-System are very simple. It is kind of like <a href="https://en.wikipedia.org/wiki/Formal_grammar">formal grammar</a> that people study in <a href="https://en.wikipedia.org/wiki/Theory_of_computation">Theory Of Computation</a> or similar courses taught in Computer Science(Actual not only kind of, L-Systems are a strict subset of formal grammar). But instead of applying one rule/production at a time, we apply as many rules as possible in parallel. Hence L-Systems are also called <code>Parallel Rewriting Systems</code>. But the rules and generated strings by itself are not that interesting, it&rsquo;s when we apply some kind of transformation to convert these generated strings into geometric structures, things start getting interesting!</p>
+<p>(<strong>Note</strong>: If you don&rsquo;t understand what I just said, don&rsquo;t worry even I did not understand them before I was forced to go through the courses as part of my curriculum :P, But rest assured it&rsquo;s easy to understand! For now, I don&rsquo;t want to dive into the depths for formal grammar and it&rsquo;s relation with L-Systems, maybe in the future? ¯\<em>(ツ)</em>/¯)</p>
 <h2 id="some-terms">Some Terms</h2>
-<p>Lets now start by defining some terms.</p>
+<p>Lets start by defining some terms that L-Systems use:</p>
 <p><code>Alphabets</code>: The set of characters we will use in our string. Some of them can be replaced by others via the rules and hence called <code>variables</code> and some of them cannot be hence called <code>constant</code> (or <code>terminal</code>). Examples we can use any character in the English alphabet like &ldquo;A&rdquo; or &ldquo;B&rdquo; or even some other fancy characters like &ldquo;[&rdquo; or &ldquo;α&rdquo;.</p>
 <p><code>Axiom</code>: Fancy way of saying a starting string! It&rsquo;s just a string made of the characters defined in our alphabet. Example: &ldquo;A&rdquo;</p>
 <p><code>Rules</code>: The fixed way in which we will replace variables with other variables and constants. Example: Take every instance of &ldquo;A&rdquo; and replace it with &ldquo;AB&rdquo;[ Written as: (A→AB)]</p>
@@ -54,7 +54,7 @@ n=2:           A B     A
 n=3:         A B A     A B
            / | | | \   | \ \
 n=4:       A B A A B   A B  A
-</code></pre><p>While this is a recursion tree that programmers might be familiar with, it is nowhere close to real trees that we see which are claimed to be closely simulated by L-Systems. This is because the rules till now have been quite simple.</p>
+</code></pre><p>While this is a recursion tree that programmers might be familiar with, it is nowhere close to real-life trees that we see, which are claimed to be closely simulated by L-Systems. This is because the rules till now have been quite simple.</p>
 <p>As we start getting into more complex rules, we start getting into more interesting visualizations. For more examples, you can have a look <a href="https://en.wikipedia.org/wiki/L-system#Examples_of_L-systems">here</a> to get an idea about how wide varieties of structures can be modeled by L-Systems.</p>
 <h2 id="visualizations">Visualizations</h2>
 <p>Now from the above strings itself, it&rsquo;s difficult to visualize the models. So we generally use what&rsquo;s called <a href="https://en.wikipedia.org/wiki/Turtle_graphics">Turtle Graphics</a> to visualize these models. Some of you might have had prior experience with <a href="https://en.wikipedia.org/wiki/Logo_(programming_language)">Logo</a>, this is quite similar and we use the generated strings as input and map it to instructions for our graphics generation.</p>
@@ -71,7 +71,7 @@ You can come up with more complex instructions but for now, these alone should s
 Try creating some visualizations by writing your own rules <a href="https://keivan.tech/L-System/">here</a>. You can also explore the code behind this <a href="https://github.com/keivan-shah/L-System">here</a>.</p>
 <p>The above link does create some cool looking but it&rsquo;s not that fun to create visualizations by hand is it? So what if there was an automated visualization with randomly generated rulesets?</p>
 <p>This is the <a href="https://ehrenjn.github.io/LSystems/lsystems.html">link</a> you are looking for! It looks cool and makes you remember the old-school Desktop Wallpapers that people used to have.</p>
-<p>For now, this is where I leave you. I will try to update this post as and when I explore more into the world of <code>L-Systems</code></p>
+<p>For now, this is where I leave you. I will try to update this post as and when I explore more into the world of <code>L-Systems</code>.</p>
 <h2 id="links">Links</h2>
 <p>Here are some more links that I referred to while writing this post.</p>
 <ul>
