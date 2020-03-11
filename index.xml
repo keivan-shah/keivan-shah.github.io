@@ -22,13 +22,13 @@
     </item>
     
     <item>
-      <title>Creating your own Static Website</title>
+      <title>Creating your Static Website</title>
       <link>/posts/creating-a-new-website/</link>
       <pubDate>Fri, 08 Nov 2019 00:00:00 +0000</pubDate>
       
       <guid>/posts/creating-a-new-website/</guid>
-      <description>Introduction Creating and hosting a website is something that many of us wondered if not tried to do. While hosting a dynamic website is comparatively challenging, its quite easy to host a simple static website with something like Github Pages. So in this post I try to help people setup up what could potentially be your first website :D
-Note: Being a developer I just assume that people know the basics of computer programming and can get by with using a little bit of commandline.</description>
+      <description>Introduction Creating and hosting a website is something that many of us wondered if not tried to do. While hosting a dynamic website is comparatively challenging, it&amp;rsquo;s quite easy to host a simple static website with something like Github Pages. So in this post, I try to help people setup up what could potentially be your first website :D
+Note: Being a developer I just assume that people know the basics of computer programming and can get by with using a little bit of command-line.</description>
     </item>
     
     <item>
