@@ -4,29 +4,29 @@
 <meta http-equiv=x-ua-compatible content="ie=edge">
 <meta name=viewport content="width=device-width,initial-scale=1,shrink-to-fit=no">
 <meta name=author content="map[name:Keivan Shah]">
-<meta name=description content="Introduction Creating and hosting a website is something that many of us wondered if not tried to do. While hosting a dynamic website is comparatively challenging, it&amp;rsquo;s quite easy to host a simple static website with something like Github Pages. So in this post, I try to help people setup up what could potentially be your first website :D
-Note: Being a developer I just assume that people know the basics of computer programming and can get by with using a little bit of command-line.">
+<meta name=description content="Introduction Whenever you open someone&amp;rsquo;s profile on Github, it shows you a neat summary of all the historical contributions that you have done and showcases it as a neat 53x7 grid. The grid shows the number of commits and other interactions that the user performed on each day over the last year.
+Since I have started working professionally and I use a different Github account for it, the contribution graph on my personal Github account has been quite empty lately.">
 <meta name=keywords content>
 <meta name=robots content="noodp">
 <meta name=theme-color content>
-<link rel=canonical href=/posts/creating-a-new-website/>
+<link rel=canonical href=/posts/contri-hack/>
 <title>
-Creating your Static Website :: Keivan Shah
+Github Contribution Graph Grafiti :: Keivan Shah
 </title>
 <link href=https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.5.0/css/flag-icon.min.css rel=stylesheet type=text/css>
 <link rel=stylesheet href=/main.031a8efc33f94f55a4071bf4e91596478a5809fc8c148fab113801189cfd2152.css>
-<meta itemprop=name content="Creating your Static Website">
-<meta itemprop=description content="Introduction Creating and hosting a website is something that many of us wondered if not tried to do. While hosting a dynamic website is comparatively challenging, it&rsquo;s quite easy to host a simple static website with something like Github Pages. So in this post, I try to help people setup up what could potentially be your first website :D
-Note: Being a developer I just assume that people know the basics of computer programming and can get by with using a little bit of command-line."><meta itemprop=datePublished content="2019-11-08T00:00:00+00:00">
-<meta itemprop=dateModified content="2019-11-08T00:00:00+00:00">
-<meta itemprop=wordCount content="508"><meta itemprop=image content="/">
+<meta itemprop=name content="Github Contribution Graph Grafiti">
+<meta itemprop=description content="Introduction Whenever you open someone&rsquo;s profile on Github, it shows you a neat summary of all the historical contributions that you have done and showcases it as a neat 53x7 grid. The grid shows the number of commits and other interactions that the user performed on each day over the last year.
+Since I have started working professionally and I use a different Github account for it, the contribution graph on my personal Github account has been quite empty lately."><meta itemprop=datePublished content="2022-01-02T00:00:00+00:00">
+<meta itemprop=dateModified content="2022-01-02T00:00:00+00:00">
+<meta itemprop=wordCount content="626"><meta itemprop=image content="/">
 <meta itemprop=keywords content>
 <meta name=twitter:card content="summary_large_image">
 <meta name=twitter:image content="/">
-<meta name=twitter:title content="Creating your Static Website">
-<meta name=twitter:description content="Introduction Creating and hosting a website is something that many of us wondered if not tried to do. While hosting a dynamic website is comparatively challenging, it&rsquo;s quite easy to host a simple static website with something like Github Pages. So in this post, I try to help people setup up what could potentially be your first website :D
-Note: Being a developer I just assume that people know the basics of computer programming and can get by with using a little bit of command-line.">
-<meta property="article:published_time" content="2019-11-08 00:00:00 +0000 UTC">
+<meta name=twitter:title content="Github Contribution Graph Grafiti">
+<meta name=twitter:description content="Introduction Whenever you open someone&rsquo;s profile on Github, it shows you a neat summary of all the historical contributions that you have done and showcases it as a neat 53x7 grid. The grid shows the number of commits and other interactions that the user performed on each day over the last year.
+Since I have started working professionally and I use a different Github account for it, the contribution graph on my personal Github account has been quite empty lately.">
+<meta property="article:published_time" content="2022-01-02 00:00:00 +0000 UTC">
 </head>
 <body>
 <div class=container>
@@ -60,43 +60,48 @@ Note: Being a developer I just assume that people know the basics of computer pr
 </div>
 <article>
 <h1 class=post-title>
-<a href=/posts/creating-a-new-website/>Creating your Static Website</a>
+<a href=/posts/contri-hack/>Github Contribution Graph Grafiti</a>
 </h1>
 <div class=post-content>
 <h2 id=introduction>Introduction</h2>
-<p>Creating and hosting a website is something that many of us wondered if not tried to do. While hosting a dynamic website is comparatively challenging, it&rsquo;s quite easy to host a simple <a href=https://techterms.com/definition/staticwebsite>static website</a> with something like <a href=https://pages.github.com/>Github Pages</a>. So in this post, I try to help people setup up what could potentially be your first website :D</p>
-<p><strong>Note:</strong> Being a developer I just assume that people know the basics of computer programming and can get by with using a little bit of command-line. While I do assume the above, I know that it is not obvious to everyone so don&rsquo;t get discouraged if you do not get things!</p>
-<h3 id=setting-up-github-pages>Setting Up Github Pages</h3>
-<p>First of all, you need a <a href=https://github.com/>Github Account</a> which I am assuming you have. From here on wherever you find <code>{YOUR_USERNAME}</code> replace that with your actual GitHub username.</p>
-<p>Github Pages allows you to host <strong>free</strong> static websites for users, your organization and your projects. Ever wondered why many open-source libraries and tools generally have a <code>*.github.io</code> website? This is the reason!</p>
-<p>So let&rsquo;s get started!</p>
-<p>Head over to <a href=https://github.com/>GitHub</a> and create a new repository named <code>{YOUR_USERNAME}.github.io</code>. Ensure that the username matches exactly or else it won&rsquo;t work!</p>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>git clone https://github.com/<span style=color:#f92672>{</span>YOUR_USERNAME<span style=color:#f92672>}</span>/<span style=color:#f92672>{</span>YOUR_USERNAME<span style=color:#f92672>}</span>.github.io
-
-cd <span style=color:#f92672>{</span>YOUR_USERNAME<span style=color:#f92672>}</span>.github.io
-
-<span style=color:#75715e># Lets create an intial homepage</span>
-echo <span style=color:#e6db74>&#34;Hello World!&#34;</span> &gt; index.html
-
-<span style=color:#75715e># Push this website to Github!</span>
-git add -A
-git commit -m <span style=color:#e6db74>&#34;Initial commit&#34;</span>
-git push -u origin master
-</code></pre></div><p>Now fire up a browser and go to https://{YOUR_USERNAME}.github.io. You should be greeted by a <code>Hello World!</code>. That&rsquo;s it! You have hosted your first website!</p>
-<p>While it might not be much but you can do a lot of things with static websites like the one we created. If you know a bit of <code>HTML</code> and <code>Javascript</code> you can create some amazing static websites. If you are looking for inspiration, people come up with some amazing creations at <a href=https://codepen.io/popular/pens/>Codepen.io</a>.
-Not only that hosting your blogs or documentation for your projects is also not out of the question using static webpages. For example, this website that you are visiting right now is a static website hosted via Github Pages!</p>
-<p>So go ahead! Try modifying the <code>index.html</code> with some actual <code>HTML</code> and <code>Javascript</code> to host your first Blog or your Resume maybe.</p>
-<p>But before you start that, it may be better that you also consider working with a static website generator. You can host your blog website by modifying the <code>index.html</code> file with links to other <code>.html</code> files and <code>.js</code> and <code>.css</code> files giving it multiple pages and structure. But as the size of your website will increase it will get more difficult to maintain! So that&rsquo;s where a static website generator like <a href=https://jekyllrb.com/>Jekyll</a> or <a href=https://gohugo.io/>Hugo</a> comes into the picture! Also, <a href=https://jekyllrb.com/>Jekyll</a> is integrated into Github Pages itself so it might be worth taking a look into. I might discuss more on this in a later post.</p>
-<p>This is my first post so I decided to keep it simple. I hope that this post was helpful! Thanks for reading! Hoping to see your websites soon!</p>
+<p>Whenever you open someone&rsquo;s profile on Github, it shows you a neat summary of all the historical contributions that you have done and showcases it as a neat <code>53x7</code> grid. The grid shows the number of commits and other interactions that the user performed on each day over the last year.</p>
+<p>Since I have started working professionally and I use a different Github account for it, the contribution graph on my personal Github account has been quite empty lately. Here&rsquo;s a look at my contribution graph before I decided to draw my name all over it :P</p>
+<p><a href=https://github.com/keivan-shah>
+<img src=/img/orig_contri_graph.png alt="Github Contri Graph" class=center style=border-radius:8px>
+</a></p>
+<p>While I do intend to change the near empty commit history and start making more open-source contributions as well as work more on personal projects on my Github, I wanted to see if I could maybe hack the graph to display something interesting in the meantime?</p>
+<p>While some might question if this is ethical to do, here&rsquo;s my take on it:</p>
+<ul>
+<li>The commit graph is a <strong>not</strong> an indicator of a profile&rsquo;s importance, it does not showcase commits one makes to their private repositories or to another source control systems. While some companies do review people&rsquo;s Github commit history as a selection criteria, I do not support that metric as a good idea. Looking at the profile commit history and projects contributed to is much more important in my opinion. Also the first thing that came to my mind when I saw the contribution graph was that it is an awesome open pixel canvas and it would be so cool to draw a pixel diagram here, keeping that in mind, I don&rsquo;t think it&rsquo;s unethical and hence going ahead with anyways.</li>
+</ul>
+<h2 id=execution>Execution</h2>
+<p>So having worked with git and Github before, I already had an rough idea that Github allows you to import old repos to their platform, so I was pretty sure that they must allow you to fake the dates on a commit somehow and probably that showed up on the contribution graph as well. Turns out that faking the date is very simple, you just need to set the <code>GIT_AUTHOR_DATE</code> and <code>GIT_COMMITTER_DATE</code> environment variables. So doing this seems to be quite easy, I was all set to writeup my own script to do this. But just a quick web search before that made me aware of many projects already existing that do this.</p>
+<p>The one I found to be most polished was <a href=https://github.com/gelstudios/gitfiti>gitfiti</a>. This project allows you to interactively create a bash script that you can run manually and create the contribution graph. This is exactly what I wanted, just a few minor things that were missing were an ability to continously loop the design and include commits into the future so that I can run this once and be rest assured that my grafiti will be there for years to come without any need for my intervention!</p>
+<p>You can find the code I wrote for this <a href=https://github.com/keivan-shah/gitfiti/tree/keivan_repeat>here</a>. And to see the commits that I made using the script, look at <a href=https://github.com/keivan-shah/githubProfileArt>this repo</a>. With the commits made till the year 2037, repeating &ldquo;Keivan&rdquo; 50 times across the grid, I think I am free from the curse of empty contribution graphs for quite a few years for now :P</p>
+<h2 id=result>Result</h2>
+<p><a href=https://github.com/keivan-shah>
+<img src=/img/final_contri_graph.png alt="Github Contri Graph" class=center style=border-radius:8px>
+</a></p>
+<p>Overall the graph does look nice and much better than having a blank diagram. I do have a few ideas to improve upon this further, but maybe next time?</p>
+<h2 id=future-ideas>Future Ideas</h2>
+<ul>
+<li>Come up with something more creative than just drawing my name over the grid?</li>
+<li>Instead of hacking this to make all the commits at once, can we make use of scheduled Github Actions to carry out a few commits on my behalf and populate the graph?</li>
+</ul>
+<h2 id=acknowledgments>Acknowledgments</h2>
+<ul>
+<li>Inspired by <a href=https://github.com/will>@will</a> and this <a href=https://bd808.com/blog/2013/04/17/hacking-github-contributions-calendar/>blog</a></li>
+<li>Thanks to <a href=https://github.com/gelstudios/gitfiti>gitfiti</a></li>
+</ul>
 </div>
 </article>
 <hr>
 <div class=post-info>
 <p><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file-text"><path d="M14 2H6A2 2 0 004 4v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
-508 Words
+626 Words
 </p>
 <p><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-calendar"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
-08-11-2019
+02-01-2022
 </p>
 </div>
 <div class=pagination>
@@ -105,10 +110,10 @@ Not only that hosting your blogs or documentation for your projects is also not 
 <hr>
 </div>
 <div class=pagination__buttons>
-<span class="button previous">
+<span class="button next">
 <a href=/posts/lsystem/random_lsystem/>
-<span class=button__icon>←</span>
 <span class=button__text>L-System</span>
+<span class=button__icon>→</span>
 </a>
 </span>
 </div>
