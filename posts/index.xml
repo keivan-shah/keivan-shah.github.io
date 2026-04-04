@@ -1,4 +1,46 @@
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Posts on Keivan Shah</title><link>/posts/</link><description>Recent content in Posts on Keivan Shah</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Sun, 11 Feb 2024 00:00:00 +0000</lastBuildDate><atom:link href="/posts/index.xml" rel="self" type="application/rss+xml"/><item><title>Rock Paper Scissors Battle Simulator</title><link>/posts/rps/</link><pubDate>Sun, 11 Feb 2024 00:00:00 +0000</pubDate><guid>/posts/rps/</guid><description>&lt;h2 id="show-me-what-you-made"&gt;Show me what you made!&lt;/h2&gt;
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Posts on Keivan Shah</title><link>/posts/</link><description>Recent content in Posts on Keivan Shah</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Sat, 04 Apr 2026 00:00:00 +0000</lastBuildDate><atom:link href="/posts/index.xml" rel="self" type="application/rss+xml"/><item><title>Weird Bugs: When Logic Meets Reality</title><link>/posts/weird-tech-stories/</link><pubDate>Sat, 04 Apr 2026 00:00:00 +0000</pubDate><guid>/posts/weird-tech-stories/</guid><description>&lt;p&gt;I&amp;rsquo;ve always loved &amp;ldquo;haunted&amp;rdquo; tech support stories, the ones that make you go &amp;ldquo;How is that even possible?!&amp;rdquo;. Listing some of my favorites here for you to enjoy! Initially this was on my todo list that I intended to write a post about but after delaying writing about it for years, I decided better an AI generated version of the stories than never posting it!&lt;/p&gt;
+&lt;h2 id="1-the-email-with-a-500-mile-geofence"&gt;1. The Email with a 500-mile Geofence&lt;/h2&gt;
+&lt;p&gt;A university admin once received a report that emails couldn&amp;rsquo;t be sent further than 500 miles.&lt;/p&gt;</description><content type="html"><![CDATA[<p>I&rsquo;ve always loved &ldquo;haunted&rdquo; tech support stories, the ones that make you go &ldquo;How is that even possible?!&rdquo;. Listing some of my favorites here for you to enjoy! Initially this was on my todo list that I intended to write a post about but after delaying writing about it for years, I decided better an AI generated version of the stories than never posting it!</p>
+<h2 id="1-the-email-with-a-500-mile-geofence">1. The Email with a 500-mile Geofence</h2>
+<p>A university admin once received a report that emails couldn&rsquo;t be sent further than 500 miles.</p>
+<ul>
+<li><strong>The Cause:</strong> An OS upgrade reset a timeout to 3 milliseconds.</li>
+<li><strong>The Math:</strong> Light in a vacuum travels at roughly 186,282 miles per second. In 3 milliseconds, it travels approximately 558 miles—nearly exactly the &ldquo;radius of failure&rdquo; reported by the professor. Because the signal had to travel both ways, any distance approaching that 500-mile mark simply didn&rsquo;t allow enough time for a round-trip response before the 3ms timeout triggered.</li>
+<li><strong>Source:</strong> <a href="https://www.ibiblio.org/harris/500milemail.html">The 500-mile Email (Trey Harris)</a></li>
+</ul>
+<h2 id="2-the-tuesday-only-printing-bug">2. The Tuesday-Only Printing Bug</h2>
+<p>In 2009, Ubuntu users found that OpenOffice would print perfectly every day of the week—except on Tuesdays.</p>
+<ul>
+<li><strong>The Cause:</strong> The Linux <code>file</code> utility misidentified PostScript files starting with <code>Tue</code> (from the date metadata) as <strong>Erlang JAM</strong> files.</li>
+<li><strong>The Result:</strong> Since the system only saw &ldquo;Tue&rdquo; once a week, the printing pipeline would incorrectly reject the document as a non-printable binary file every Tuesday.</li>
+<li><strong>Source:</strong> <a href="https://bugs.launchpad.net/ubuntu/&#43;source/file/&#43;bug/248619">Ubuntu Bug #248619</a></li>
+</ul>
+<h2 id="3-the-car-that-hates-vanilla-ice-cream">3. The Car that &ldquo;Hates&rdquo; Vanilla Ice Cream</h2>
+<p>A customer complained to GM that his Pontiac worked for every flavor of ice cream except vanilla.</p>
+<ul>
+<li><strong>The Cause:</strong> <strong>Vapor Lock</strong>. In older car designs, engine heat could cause the liquid fuel in the lines to turn into gas (vapor), which would prevent the car from restarting until it had enough time to cool down and let the fuel re-liquefy.</li>
+<li><strong>The Reason:</strong> Vanilla was the most popular flavor and was kept in a quick-access case at the front of the store. A &ldquo;vanilla run&rdquo; took less than two minutes—not enough time for the engine heat to dissipate and the vapor lock to clear. Buying other flavors required a long walk to the back of the store, giving the car just enough time to cool down and start reliably.</li>
+<li><strong>Source:</strong> <a href="https://www.cs.cmu.edu/~wkw/humour/carproblems.txt">CMU Humor Archive: Car Problems</a></li>
+</ul>
+<h2 id="4-the-song-that-could-kill-hard-drives">4. The Song That Could Kill Hard Drives</h2>
+<p>Playing the music video for Janet Jackson&rsquo;s &ldquo;Rhythm Nation&rdquo; would crash certain laptops, even those sitting nearby.</p>
+<ul>
+<li><strong>The Cause:</strong> <strong>Resonant frequency</strong>.</li>
+<li><strong>The Physics:</strong> The song contains a specific frequency that matched the natural resonant frequency of a 5400-RPM hard drive model. The vibration from speakers was enough to make the drive head crash. It is now tracked as <a href="https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2022-38392">CVE-2022-38392</a>.</li>
+<li><strong>Source:</strong> <a href="https://devblogs.microsoft.com/oldnewthing/20220816-00/?p=106994">Microsoft: The Old New Thing</a></li>
+</ul>
+<h2 id="5-hunting-cosmic-rays-with-a-hex-editor">5. Hunting Cosmic Rays with a Hex Editor</h2>
+<p>In 2000, Google’s search indexer began failing mysteriously, producing corrupt or outdated results despite no software changes.</p>
+<ul>
+<li><strong>The Discovery:</strong> To find the bug, engineers (including Jeff Dean and Sanjay Ghemawat) sat down to inspect a raw <strong>hex dump</strong> of the corrupted index files. By manually binary-diffing them against the source data, they found single-bit flips—specifically, 0s that had spontaneously become 1s in memory.</li>
+<li><strong>The Lesson of Scale:</strong> Cosmic rays are incredibly rare for a single PC, but they aren&rsquo;t rare for a fleet. Google realized that even if a bit flip is a &ldquo;one-in-a-million&rdquo; event, it becomes a daily guarantee once you have a million machines.</li>
+<li><strong>The Result:</strong> This incident proved that &ldquo;impossible&rdquo; hardware errors are inevitable at scale. It forced Google to mandate ECC memory and design its entire infrastructure to assume that hardware is constantly failing.</li>
+<li><strong>Source:</strong> <a href="https://www.zdnet.com/article/google-experience-reveals-the-importance-of-ecc-memory/">Google experience reveals the importance of ECC memory (ZDNet)</a></li>
+</ul>
+<hr>
+<p>Tech is really weird! If you have any other stories you think I should add to the list, <a href="mailto:keivan.shah@gmail.com">email</a> them to me!</p>
+<p><em>Note: This post was written with the help of AI.</em></p>
+]]></content></item><item><title>Rock Paper Scissors Battle Simulator</title><link>/posts/rps/</link><pubDate>Sun, 11 Feb 2024 00:00:00 +0000</pubDate><guid>/posts/rps/</guid><description>&lt;h2 id="show-me-what-you-made"&gt;Show me what you made!&lt;/h2&gt;
 &lt;p&gt;Yeah, no point going through the technical details if you dont like what I made! So here: &lt;a href="https://keivan-shah.github.io/RPS/"&gt;https://keivan-shah.github.io/RPS/&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;&lt;a href="https://keivan-shah.github.io/RPS/"&gt;
 &lt;img src="/img/rps.png" alt="RPS Simulator" class="center" style="border-radius: 8px;" /&gt;
